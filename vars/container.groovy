@@ -15,7 +15,7 @@ def call(String name = "", body) {
         System.setProperty(key, name)
     } else {
         if (globalContainerName != name) {
-            echo "WARNING: multiple container images are not yet supported in 'container(x) { ... }' blocks! So cannot run command in conatiner ${name} so using ${globalContainerName} instead!"
+            error("Multiple container names are not yet supported in 'container(name) { ... }' blocks! So cannot run command in container '${name}' so using '${globalContainerName}' instead!"
         }
     }
     
